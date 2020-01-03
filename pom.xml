@@ -70,23 +70,30 @@
   </scm>
 
   <distributionManagement>
-    <repository>
-      <id>${distMgmtStagingId}</id>
-      <name>${distMgmtStagingName}</name>
-      <url>${distMgmtStagingUrl}</url>
-    </repository>
     <snapshotRepository>
-      <id>${distMgmtSnapshotsId}</id>
-      <name>${distMgmtSnapshotsName}</name>
-      <url>${distMgmtSnapshotsUrl}</url>
+      <id>fk-art-snapshot</id>
+      <name>libs-snapshot</name>
+      <url>http://artifactory.fkinternal.com/artifactory/v1.0/artifacts/libs-snapshots-local</url>
     </snapshotRepository>
-    <site>
-      <id>tez.apache.org</id>
-      <url>scp://tez.apache.org</url>
-    </site>
+    <repository>
+      <id>fk-art-release</id>
+      <name>libs-rel</name>
+      <url>http://artifactory.fkinternal.com/artifactory/v1.0/artifacts/libs-release-local</url>
+    </repository>
   </distributionManagement>
 
   <repositories>
+    <repository>
+      <id>fk-art-snapshot</id>
+      <name>Flipkart-Artifactory</name>
+      <url>http://artifactory.fkinternal.com/artifactory/v1.0/artifacts/libs-snapshots-local</url>
+    </repository>
+    <repository>
+      <id>fk-art-release</id>
+      <name>Flipkart-Artifactory</name>
+      <url>http://artifactory.fkinternal.com/artifactory/v1.0/artifacts/libs-release-local</url>
+    </repository>
+
     <repository>
       <id>${distMgmtSnapshotsId}</id>
       <name>${distMgmtSnapshotsName}</name>
@@ -95,6 +102,17 @@
   </repositories>
 
   <pluginRepositories>
+    <pluginRepository>
+      <id>fk-art-snapshot</id>
+      <name>Flipkart-Artifactory</name>
+      <url>http://artifactory.fkinternal.com/artifactory/v1.0/artifacts/libs-snapshots-local</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>fk-art-release</id>
+      <name>Flipkart-Artifactory</name>
+      <url>http://artifactory.fkinternal.com/artifactory/v1.0/artifacts/libs-release-local</url>
+    </pluginRepository>
+
     <pluginRepository>
       <id>maven2-repository.atlassian</id>
       <name>Atlassian Maven Repository</name>
