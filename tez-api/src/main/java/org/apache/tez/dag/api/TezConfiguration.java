@@ -1624,6 +1624,18 @@ public class TezConfiguration extends Configuration {
       TEZ_PREFIX + "dag.recovery.enabled";
   public static final boolean DAG_RECOVERY_ENABLED_DEFAULT = true;
 
+
+  /**
+   * Boolean value. When set, this enables AM to fail when DAG recovery is enabled and
+   * restarted app master did not find anything to recover
+   * Expert level setting.
+   */
+  @ConfigurationScope(Scope.AM)
+  @ConfigurationProperty(type="boolean")
+  public static final String TEZ_AM_FAILURE_ON_MISSING_RECOVERY =
+          TEZ_AM_PREFIX + "failure.on.missing.recovery";
+  public static final boolean TEZ_AM_FAILURE_ON_MISSING_RECOVERY_DEFAULT = false;
+
   /**
    * Int value. Size in bytes for the IO buffer size while processing the recovery file.
    * Expert level setting.
