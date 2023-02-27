@@ -43,6 +43,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
 import java.util.Timer;
@@ -1996,6 +1997,13 @@ public class DAGAppMaster extends AbstractService {
           RecoveryParser recoveryParser = new RecoveryParser(
               this, recoveryFS, recoveryDataDir, appAttemptID.getAttemptId());
           DAGRecoveryData recoveredDAGData = recoveryParser.parseRecoveryData();
+
+          if(Objects.isNull(recoveredDAGData) && amConf.getBoolean(
+                  TezConfiguration.TEZ_AM_FAILURE_ON_MISSING_RECOVERY,
+                  TezConfiguration.TEZ_AM_FAILURE_ON_MISSING_RECOVERY_DEFAULT)) {
+            throw new IOException("Found nothing to recover in currentAttemptId= "
+                    + this.appAttemptID.getAttemptId());
+          }
           return recoveredDAGData;
         }
       } finally {
