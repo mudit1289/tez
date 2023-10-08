@@ -122,6 +122,11 @@ public final class TezRuntimeConfiguration {
   public static final int TEZ_RUNTIME_INDEX_CACHE_MEMORY_LIMIT_BYTES_DEFAULT =
       1024 * 1024;
 
+  @ConfigurationProperty(type = "integer")
+  public static final String TEZ_RUNTIME_SPILL_FILES_COUNT_LIMIT = TEZ_RUNTIME_PREFIX +
+          "spill.files.count.limit";
+  public static final int TEZ_RUNTIME_SPILL_FILES_COUNT_LIMIT_DEFAULT = -1;
+
 
   // TODO Use the default value
   @ConfigurationProperty(type = "integer")
