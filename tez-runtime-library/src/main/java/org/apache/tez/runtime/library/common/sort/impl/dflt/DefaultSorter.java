@@ -157,7 +157,7 @@ public final class DefaultSorter extends ExternalSorter implements IndexedSortab
     Preconditions.checkArgument(spillFilesCountLimit == SPILL_FILES_COUNT_UNBOUNDED_LIMIT_VALUE
                     || spillFilesCountLimit > 0,
             TezRuntimeConfiguration.TEZ_RUNTIME_SPILL_FILES_COUNT_LIMIT
-                    + " should be greater than or equal to 0");
+                    + " should be greater than 0 or unbounded");
 
     boolean confPipelinedShuffle = this.conf.getBoolean(TezRuntimeConfiguration
         .TEZ_RUNTIME_PIPELINED_SHUFFLE_ENABLED, TezRuntimeConfiguration

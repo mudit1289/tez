@@ -852,7 +852,7 @@ public class TestPipelinedSorter {
             .TEZ_RUNTIME_SPILL_FILES_COUNT_LIMIT, -2);
 
     exception.expect(IllegalArgumentException.class);
-    exception.expectMessage("tez.runtime.spill.files.count.limit should be greater than or equal to 0");
+    exception.expectMessage("tez.runtime.spill.files.count.limit should be greater than 0 or unbounded");
 
     PipelinedSorter sorter = new PipelinedSorter(this.outputContext, conf,
             numOutputs, (128l << 20));

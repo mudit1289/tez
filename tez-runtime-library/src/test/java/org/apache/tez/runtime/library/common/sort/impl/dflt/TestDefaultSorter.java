@@ -600,7 +600,7 @@ public class TestDefaultSorter {
             context.getTotalMemoryAvailableToTask()), handler);
 
     exception.expect(IllegalArgumentException.class);
-    exception.expectMessage("tez.runtime.spill.files.count.limit should be greater than or equal to 0");
+    exception.expectMessage("tez.runtime.spill.files.count.limit should be greater than 0 or unbounded");
 
     SorterWrapper sorterWrapper = new SorterWrapper(context, conf, 1, handler.getMemoryAssigned());
     sorterWrapper.getSorter();

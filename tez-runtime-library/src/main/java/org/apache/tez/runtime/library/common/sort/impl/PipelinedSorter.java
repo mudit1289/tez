@@ -175,7 +175,7 @@ public class PipelinedSorter extends ExternalSorter {
     Preconditions.checkArgument(spillFilesCountLimit == SPILL_FILES_COUNT_UNBOUNDED_LIMIT_VALUE
                     || spillFilesCountLimit > 0,
             TezRuntimeConfiguration.TEZ_RUNTIME_SPILL_FILES_COUNT_LIMIT
-                    + " should be greater than or equal to 0");
+                    + " should be greater than 0 or unbounded");
 
     //sanity checks
     final long sortmb = this.availableMemoryMb;
