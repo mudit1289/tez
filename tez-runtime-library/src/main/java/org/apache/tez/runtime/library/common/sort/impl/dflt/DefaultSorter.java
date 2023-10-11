@@ -1419,7 +1419,7 @@ public final class DefaultSorter extends ExternalSorter implements IndexedSortab
     ++numSpills;
     if(spillFilesCountLimit != SPILL_FILES_COUNT_UNBOUNDED_LIMIT_VALUE && numSpills > spillFilesCountLimit) {
       throw new IOException("Too many spill files got created, control it with " +
-              "mapreduce.task.spill.files.count.limit, current value: " + spillFilesCountLimit +
+              "tez.runtime.spill.files.count.limit, current value: " + spillFilesCountLimit +
               ", current spill count: " + numSpills);
     }
   }

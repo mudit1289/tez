@@ -892,7 +892,7 @@ public class TestPipelinedSorter {
         String errorMessage = targetException.getMessage();
         if (errorMessage != null) {
           if(errorMessage.equals("Too many spill files got created, control it with " +
-                  "mapreduce.task.spill.files.count.limit, current value: 2, current spill count: 3")) {
+                  "tez.runtime.spill.files.count.limit, current value: 2, current spill count: 3")) {
             gotExceptionWithMessage = true;
           }
         }
