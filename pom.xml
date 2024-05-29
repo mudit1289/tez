@@ -3,9 +3,7 @@
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-
     http://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -79,42 +77,41 @@
   </scm>
 
   <distributionManagement>
-    <repository>
-      <id>${distMgmtStagingId}</id>
-      <name>${distMgmtStagingName}</name>
-      <url>${distMgmtStagingUrl}</url>
-    </repository>
     <snapshotRepository>
-      <id>${distMgmtSnapshotsId}</id>
-      <name>${distMgmtSnapshotsName}</name>
-      <url>${distMgmtSnapshotsUrl}</url>
+      <id>fk-jfrog-snapshot</id>
+      <name>libs-snapshot</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
     </snapshotRepository>
-    <site>
-      <id>tez.apache.org</id>
-      <url>scp://tez.apache.org</url>
-    </site>
+    <repository>
+      <id>fk-jfrog-release</id>
+      <name>libs-rel</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
+    </repository>
   </distributionManagement>
 
   <repositories>
     <repository>
-      <id>${distMgmtSnapshotsId}</id>
-      <name>${distMgmtSnapshotsName}</name>
-      <url>${distMgmtSnapshotsUrl}</url>
+      <id>fk-jfrog-snapshot</id>
+      <name>Flipkart-Artifactory</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
+    </repository>
+    <repository>
+      <id>fk-jfrog-release</id>
+      <name>Flipkart-Artifactory</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
-      <id>maven2-repository.atlassian</id>
-      <name>Atlassian Maven Repository</name>
-      <url>https://maven.atlassian.com/repository/public</url>
-      <layout>default</layout>
+      <id>fk-jfrog-snapshot</id>
+      <name>Flipkart-Artifactory</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
     </pluginRepository>
     <pluginRepository>
-      <id>${distMgmtSnapshotsId}</id>
-      <name>${distMgmtSnapshotsName}</name>
-      <url>${distMgmtSnapshotsUrl}</url>
-      <layout>default</layout>
+      <id>fk-jfrog-release</id>
+      <name>Flipkart-Artifactory</name>
+      <url>https://jfrog.fkinternal.com/artifactory/maven_virtual</url>
     </pluginRepository>
   </pluginRepositories>
 
